@@ -1,13 +1,16 @@
 .date{
-  margin-top:-20px ;
+  margin-top:-10px ;
 }
 ul{
   list-style-type:none;
-  margin-left: 300px;
-  margin-top: -50px;
   font-size: 18px;
 }
 .degree{
   font-size: 60px;
-  margin-left: 25px;
 }
+.cel{
+  display: block;
+  margin-top: -70px;
+  margin-left: 130px;
+}
+
