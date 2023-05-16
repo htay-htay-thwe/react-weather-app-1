@@ -35,7 +35,7 @@ function handle(event){
  
 }
 function search(){
-   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=97f8e93f00107773f88eafd933ce86b7&units=metric`;
+   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=cabdbda40038ba7d1165b953b1c7bd6c&units=metric`;
    console.log(apiUrl);
    axios.get(apiUrl).then(showTemperature);
 }
