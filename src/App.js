@@ -5,6 +5,8 @@ import React, {useState} from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.css";
 import WeatherIcon from './weatherIcon';
+import CovertUnit from './covertUnit';
+import WeatherForecast from './weatherForecast';
 
 
 function App(props) {
@@ -15,6 +17,7 @@ function App(props) {
 function showTemperature(response){
  setLoaded("true");
   setMessage({
+    coordinates : response.data.coord,
     name : response.data.name,
     temperature : Math.round(response.data.main.temp),
     Description : response.data.weather[0].description,
@@ -71,9 +74,8 @@ if(loaded){
         <div className="row">
           <div className="col-6">
             <div className="condition">
-              <WeatherIcon code={message.icon} />
-              <span className="degree">{message.temperature}</span>
-              <span className="cel">°C</span>
+              <WeatherIcon code={message.icon} size={56}/>
+              <CovertUnit data={message.temperature}/>
             </div>
           </div>
           <div className="col-6">
@@ -83,13 +85,14 @@ if(loaded){
             </ul>
           </div>
         </div>
+       <WeatherForecast information={message.coordinates}/>
       </section>
     </div>
   );
 }
  else {
   search();
-  return "Loading..."
+  return <div className='searching'>Loading...</div>
 }
 }
 

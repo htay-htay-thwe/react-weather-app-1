@@ -2,4 +2,14 @@ section{
   border: 2px solid black;
   padding: 20px 30px;
   max-width: 600px;
+  margin-left: 100px;
+  margin-top: 50px;
+}
+.open{
+  margin-left: 100px;
+  margin-top: 10px;
+}
+.searching{
+   margin-left: 100px;
+  margin-top: 10px;
 }
