@@ -5,9 +5,9 @@ export default function WeatherForecast(props){
     let [loaded,setLoaded]=useState(false);
     let[forecast,setForecast]=useState(null);
 
-    useEffect(()=>{
-        setLoaded(false);
-    },[props.information]);
+    useEffect(() => {
+      setLoaded(false);
+    }, [props.information]);
 
 function handle(response){
     setForecast(response.data.daily);
@@ -23,7 +23,8 @@ function handle(response){
                 if (index<6){
                 return( <div className="col" key={index}>
                 <ForecastDay data={dailyForecast} />
-                </div>)}else{
+                </div>)
+                }else{
                     return null;
                 }
                })}
@@ -36,7 +37,7 @@ function handle(response){
            
         let latitude=props.information.lat;
         let longitude=props.information.lon;
-let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=97f8e93f00107773f88eafd933ce86b7&units=metric`
+let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=97f8e93f00107773f88eafd933ce86b7&units=metric`;
 axios.get(apiUrl).then(handle);
     
 }

@@ -92,7 +92,7 @@ if(loaded){
 }
  else {
   search();
-  return <div className='searching'>Loading...</div>
+  return (<div className='searching'>Loading...</div>);
 }
 }
 
